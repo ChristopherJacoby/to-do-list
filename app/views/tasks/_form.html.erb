@@ -1,0 +1,16 @@
+<%= form_with(model: @task) do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, autofocus: true%>
+  <%= f.label :room %>
+  <%= f.text_field :room %>
+  <%= f.label :allowance %>
+  <%= f.number_field :allowance %>
+  <%= f.label :assigned %>
+  <%= f.text_field :assigned %>
+  <%= f.label :complete, :value => 'Completed' %>
+  <%= f.radio_button :complete, true %>
+  <%= f.label :complete, :value => 'Not Completed' %>
+  <%= f.radio_button :complete, false, :checked => true %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,12 @@
+<ol class="list-decimal">
+  <li><%= @task.name %></li>
+  <li><%= @task.room %></li>
+  <li><%= @task.allowance %></li>
+  <li><%= @task.assigned %></li>
+  <li><%= @task.complete %></li>
+</ol>
+
+<section>
+  <%= link_to 'EDIT', edit_task_path %>
+  <%= link_to 'DELETE', task_path(@task), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this task?"} %>
+</section>

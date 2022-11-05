@@ -1,0 +1,9 @@
+<% @tasks.each do |task| %>
+  <div class= "bg-slate-100 grid grid-auto">
+    <%= link_to task.name, task %>
+    <%= task.room %>
+    <%= task.assigned %>
+    <%= number_to_currency(task.allowance, precision: 0) %>
+    <%= task.complete %>
+  </div>
+<% end %>

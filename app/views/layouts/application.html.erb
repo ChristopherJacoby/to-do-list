@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ToDoList</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body class="p-8">
+
+  <header class="grid bg-slate-200 grid-cols-3">
+    <%= link_to image_tag("post-it.png"), root_path %>
+    <div class="">
+      <%= link_to "Add New Task", new_task_path %>
+    </div>
+  </header>
+
+  <content class="p-4 grid">
+    <%= yield %>
+  </content>
+
+  <footer class="footer p-4 grid bg-slate-400 justify-items-center">
+    <div class="text-l">Version 1</div>
+  </footer>
+
+  </body>
+</html>
