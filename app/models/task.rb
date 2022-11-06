@@ -1,6 +1,6 @@
 class Task < ApplicationRecord
 
-  validates :name, :assigned, :room, :presence => true
+  # validates :name, :assigned, :room, :presence => true
   # validates :allowance, numericality: { greater_than_or_equal_to: 0 }
 
   PEOPLE = ["Dad", "Mom", "Lauren", "Melanie", "Victoria", "Seth"]

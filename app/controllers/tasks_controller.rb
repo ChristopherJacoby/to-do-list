@@ -1,7 +1,8 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all.where(complete: false)
+    @tasks = Task.all
+                 # .where(complete: false)
   end
 
   def show
