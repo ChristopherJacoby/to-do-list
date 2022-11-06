@@ -1,9 +1,20 @@
-<% @tasks.each do |task| %>
-  <div class= "bg-slate-100 grid grid-auto">
-    <%= link_to task.name, task %>
-    <%= task.room %>
-    <%= task.assigned %>
-    <%= number_to_currency(task.allowance, precision: 0) %>
-    <%= task.complete %>
-  </div>
-<% end %>
+<div class="flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
+  <% @tasks.each do |task| %>
+    <%= link_to task do %>
+      <div class="bg-yellow-200 grid auto-rows-auto shadow-md h-60 w-60 flex items-center grid justify-items-center">
+        <div class="text-2xl">
+          <%= task.name %>
+        </div>
+        <div class="text-xl">
+          <%= task.room %>
+        </div>
+        <div>
+          <%= task.assigned %>
+        </div>
+        <div class="text-sm">
+          <%= number_to_currency(task.allowance, precision: 0) %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

@@ -1,16 +1,15 @@
 <%= form_with(model: @task) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, autofocus: true%>
-  <%= f.label :room %>
-  <%= f.text_field :room %>
-  <%= f.label :allowance %>
-  <%= f.number_field :allowance %>
-  <%= f.label :assigned %>
-  <%= f.text_field :assigned %>
-  <%= f.label :complete, :value => 'Completed' %>
-  <%= f.radio_button :complete, true %>
-  <%= f.label :complete, :value => 'Not Completed' %>
-  <%= f.radio_button :complete, false, :checked => true %>
-
-  <%= f.submit %>
+  <div class="flex grid grid-cols-1 w-50">
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true %>
+    <%= f.label :room %>
+    <%= f.select :room, Task::ROOMS, prompt: "Pick one" %>
+    <%= f.label :allowance %>
+    <%= f.number_field :allowance %>
+    <%= f.label :assigned %>
+    <%= f.select :assigned, Task::PEOPLE, prompt: "Pick one" %>
+    <div class="flex grid items-center justify-items-center">
+      <%= f.submit class: "bg-blue-300 w-40 m-4 font-bold rounded" %>
+    </div>
+  </div>
 <% end %>

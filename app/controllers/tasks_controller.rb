@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
+    @tasks = Task.all.where(complete: false)
   end
 
   def show
@@ -31,6 +31,11 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
     @task.destroy
     redirect_to root_path, status: :see_other
+  end
+
+  def complete
+    @task = Task.find(params[:id]).update(complete: true)
+    redirect_to root_path
   end
 
   private
