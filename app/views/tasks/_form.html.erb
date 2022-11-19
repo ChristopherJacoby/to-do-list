@@ -1,4 +1,5 @@
 <%= form_with(model: @task) do |f| %>
+  <%= render 'shared/error', object:task %>
   <div class="flex grid grid-cols-1 w-50">
     <%= f.label :name %>
     <%= f.text_field :name, autofocus: true %>

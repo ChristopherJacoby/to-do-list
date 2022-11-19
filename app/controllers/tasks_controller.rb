@@ -2,7 +2,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
-                 # .where(complete: false)
+    # .where(complete: false)
   end
 
   def show
@@ -15,7 +15,11 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-    redirect_to new_task_path
+    if @task.save
+      redirect_to new_task_path, notice: "Task has been created"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def edit
@@ -24,14 +28,18 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(task_params)
-    redirect_to @task
+    if @task.save
+      @task.update(task_params)
+      redirect_to @task, notice: "Task has been updated"
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to root_path, status: :see_other
+    redirect_to root_path, status: :see_other, alert: "Task has been deleted"
   end
 
   def complete
