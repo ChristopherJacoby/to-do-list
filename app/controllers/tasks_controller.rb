@@ -1,8 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.all
-    # .where(complete: false)
+    @tasks = Task.where(complete: nil) || Task.where(complete: false)
   end
 
   def show
@@ -28,8 +27,8 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
+    @task.update(task_params)
     if @task.save
-      @task.update(task_params)
       redirect_to @task, notice: "Task has been updated"
     else
       render :new, status: :unprocessable_entity
@@ -44,13 +43,21 @@ class TasksController < ApplicationController
 
   def complete
     @task = Task.find(params[:id]).update(complete: true)
-    redirect_to root_path
+    redirect_to root_path, notice: "Task has been complete"
   end
 
   private
 
   def task_params
-    params.require(:task).permit!
+    params.require(:task).permit(:name, :room, :assigned, :allowance, :complete)
   end
 
 end
+
+#
+# Complete
+# Find id of task and get params
+# update boolean of complete to true
+# route back to root
+# display flash of complete
+# place complete flash in controller
