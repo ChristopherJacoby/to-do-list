@@ -43,7 +43,7 @@ class TasksController < ApplicationController
 
   def complete
     @task = Task.find(params[:id]).update(complete: true)
-    redirect_to root_path, notice: "Task has been complete"
+    redirect_to root_path, notice: "Task has been completed"
   end
 
   private
