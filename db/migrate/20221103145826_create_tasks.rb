@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration[7.0]
       t.string :room
       t.string :assigned
       t.integer :allowance
-      t.boolean :complete
+      t.boolean :complete, default: false
 
       t.timestamps
     end

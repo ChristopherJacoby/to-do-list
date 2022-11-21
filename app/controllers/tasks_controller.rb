@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
   def index
-    @tasks = Task.where(complete: nil) || Task.where(complete: false)
+    @tasks = Task.where(complete: false)
   end
 
   def show
@@ -25,9 +25,12 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
+  # PUT tasks/123?completed=true
   def update
+    #=> params[:completed] => true
     @task = Task.find(params[:id])
     @task.update(task_params)
+    # another approach: update 'completed' attribute with params[:completed]
     if @task.save
       redirect_to @task, notice: "Task has been updated"
     else
@@ -41,6 +44,7 @@ class TasksController < ApplicationController
     redirect_to root_path, status: :see_other, alert: "Task has been deleted"
   end
 
+  # Create a new route, wire up the form action to the route
   def complete
     @task = Task.find(params[:id]).update(complete: true)
     redirect_to root_path, notice: "Task has been completed"
