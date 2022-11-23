@@ -68,6 +68,7 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
@@ -87,6 +88,8 @@ GEM
     debug (1.6.2)
       irb (>= 1.3.6)
       reline (>= 0.3.1)
+    email_validator (2.2.4)
+      activemodel
     erubi (1.11.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
@@ -208,9 +211,11 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootsnap
   capybara
   debug
+  email_validator
   importmap-rails
   jbuilder
   puma (~> 5.0)
