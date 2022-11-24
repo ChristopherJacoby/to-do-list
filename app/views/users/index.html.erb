@@ -1,0 +1,6 @@
+<h3>Accounts</h3>
+<% @users.each do |user| %>
+  <ul>
+    <%= link_to user.name, user %>
+  </ul>
+<% end %>

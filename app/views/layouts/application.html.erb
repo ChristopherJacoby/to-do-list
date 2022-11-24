@@ -13,11 +13,8 @@
 
   <body>
 
-  <header class="grid bg-slate-200 grid-cols-3">
-    <%= link_to image_tag("post-it.png"), root_path %>
-    <div class="flex grid justify-items-center items-center">
-      <%= link_to "Add New Task", new_task_path %>
-    </div>
+  <header>
+    <%= render "layouts/header" %>
   </header>
 
   <content class="p-4 grid">

@@ -1,0 +1,12 @@
+<header>
+  <nav class="grid bg-slate-200 grid-cols-3 ml-2">
+    <%= link_to image_tag("post-it.png"), root_path %>
+    <div class="flex grid justify-items-center items-center">
+      <%= link_to "Add New Task", new_task_path %>
+    </div>
+    <div class="flex gap-4 justify-end items-center mr-2">
+      <%= link_to "Sign Up", signup_path %>
+      <%= link_to "Sign In", signup_path %>
+    </div>
+  </nav>
+</header>
