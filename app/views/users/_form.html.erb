@@ -8,6 +8,11 @@
       </div>
 
       <div class="mb-8 grid">
+        <%= f.label :username %>
+        <%= f.text_field :username %>
+      </div>
+
+      <div class="mb-8 grid">
         <%= f.label :email %>
         <%= f.email_field :email %>
       </div>
@@ -23,7 +28,11 @@
       </div>
 
       <div class="flex grid items-center justify-items-center">
-        <%= f.submit class: "bg-blue-300 w-40 m-4 font-bold rounded" %>
+        <% if user.new_record? %>
+          <%= f.submit "Create Account", class: "bg-blue-300 w-40 m-4 font-bold rounded" %>
+        <% else %>
+          <%= f.submit "Update Account", class: "bg-blue-300 w-40 m-4 font-bold rounded" %>
+        <% end %>
       </div>
     </div>
   <% end %>

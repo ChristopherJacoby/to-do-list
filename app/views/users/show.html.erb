@@ -1,7 +1,10 @@
 <h1 class="text-2xl"><%= @user.name %>'s account</h1>
 <section>
-  <h6><%= @user.name %></h6>
-  <%= @user.email %>
+  <ul>
+    <li><h6><%= @user.name %></h6></li>
+    <li><%= @user.username %></li>
+    <li><%= @user.email %></li>
+  </ul>
 </section>
 
 <section>
