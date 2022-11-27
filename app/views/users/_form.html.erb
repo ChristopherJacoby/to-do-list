@@ -1,28 +1,31 @@
 <div class="flex justify-center w-120">
+
   <%= form_with(model: user) do |f| %>
     <%= render 'shared/error', object: user %>
+
     <div class="flex grid grid-cols-1">
-      <div class="mb-8 grid">
+
+      <div class="mb-4 grid">
         <%= f.label :name %>
         <%= f.text_field :name, autofocus: true %>
       </div>
 
-      <div class="mb-8 grid">
+      <div class="mb-4 grid">
         <%= f.label :username %>
         <%= f.text_field :username %>
       </div>
 
-      <div class="mb-8 grid">
+      <div class="mb-4 grid">
         <%= f.label :email %>
         <%= f.email_field :email %>
       </div>
 
-      <div class="mb-8 grid">
+      <div class="mb-4 grid">
         <%= f.label :password %>
         <%= f.password_field :password %>
       </div>
 
-      <div class="mb-8 grid">
+      <div class="mb-4 grid">
         <%= f.label :password_confirmation, "Confirm Password" %>
         <%= f.password_field :password_confirmation %>
       </div>
@@ -34,6 +37,9 @@
           <%= f.submit "Update Account", class: "bg-blue-300 w-40 m-4 font-bold rounded" %>
         <% end %>
       </div>
+
+      <p>Already have an account? <%= link_to 'Log In', signin_path, class: "ml-2" %></p>
+
     </div>
   <% end %>
 </div>

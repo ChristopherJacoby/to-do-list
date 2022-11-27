@@ -1,0 +1,29 @@
+<div class="flex justify-center w-120">
+  <%= form_with(url: session_path) do |f| %>
+    <%#= render 'shared/error', object: user %>
+
+    <h3 class="mb-4 flex justify-center text-2xl">Sign In</h3>
+
+    <div class="flex grid grid-cols-1 justify-items-center">
+
+      <div class="mb-4 grid">
+        <%= f.label :username %>
+        <%= f.text_field :username, autofocus: true, required: true %>
+      </div>
+
+      <div class="mb-4 grid">
+        <%= f.label :password %>
+        <%= f.password_field :password, required: true %>
+      </div>
+
+      <div class="mb-4 grid">
+        <%= f.submit 'Sign In', class: "bg-blue-300 w-40 m-4 p-2 font-bold rounded" %>
+      </div>
+
+      <p class="flex justify-items-center">
+        Don't have an account? <%= link_to "Create Account", signup_path, class: "ml-2" %>
+      </p>
+
+    </div>
+  <% end %>
+</div>

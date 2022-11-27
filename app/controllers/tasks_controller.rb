@@ -57,11 +57,3 @@ class TasksController < ApplicationController
   end
 
 end
-
-#
-# Complete
-# Find id of task and get params
-# update boolean of complete to true
-# route back to root
-# display flash of complete
-# place complete flash in controller
