@@ -1,7 +1,8 @@
-<div class="flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
+<div class="flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20">
   <% @tasks.each do |task| %>
+<!--    Change link_to to make only card clickable and not the entire div.-->
     <%= link_to task do %>
-      <div class="bg-yellow-200 grid auto-rows-auto shadow-md h-60 w-60 flex items-center grid justify-items-center">
+      <div class="bg-yellow-200 grid auto-rows-auto shadow-md h-80 flex items-center grid justify-items-center">
         <div class="text-2xl">
           <%= task.name %>
         </div>
