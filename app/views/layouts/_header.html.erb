@@ -1,5 +1,5 @@
 <header>
-  <nav class="grid bg-slate-200 grid-cols-3">
+  <nav class="grid grid-cols-3">
     <%= link_to image_tag("post-it.png"), root_path, class: "ml-2" %>
     <div class="flex grid justify-items-center items-center">
       <%= link_to "Add New Task", new_task_path %>
@@ -10,7 +10,7 @@
         <%= button_to "Sign Out", session_path, method: :delete %>
       <% else %>
         <%= link_to "Sign Up", signup_path %>
-        <%= link_to "Sign In", new_session_path %>
+        <%= link_to "Sign In", signin_path %>
       <% end %>
     </div>
   </nav>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="bg-slate-200">
   <head>
     <title>ToDoList</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -17,13 +17,13 @@
     <%= render "layouts/header" %>
   </header>
 
-  <content class="p-4 grid">
+  <content class="p-4 grid bg-white">
     <%= render 'layouts/flash', class: "flex justify-center" %>
     <%= yield %>
   </content>
 
-  <footer class="footer p-4 grid bg-slate-400 justify-items-center">
-    <div class="text-l">Version 1</div>
+  <footer class="footer p-4 grid justify-items-center">
+    <div class= "text-l">Version 1</div>
   </footer>
 
   </body>
