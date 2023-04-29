@@ -1,0 +1,18 @@
+databases:
+  - name: to-do
+    databaseName: to-do-db
+    user: to-do-user
+
+services:
+  - type: web
+    name: to-do
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVards:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: to-do
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
